@@ -138,7 +138,7 @@ endif()
 # and install MinGW with gcc 7.1 with has STD_THREADS and fs, from: https://sourceforge.net/projects/mingw-w64/files/
 #
 #
-# see at end of:  https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dynamic_or_shared.html
+# see at end of:  https://gcc.gnu.org/onlinedocs/libc++/manual/using_dynamic_or_shared.html
 #
 if(CMAKE_COMPILER_IS_GNUCXX OR "${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
     if("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
@@ -159,7 +159,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR "${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
         if(MINGW)
             set(CMAKE_EXE_LINKER_FLAGS "-static -pthread")
         else()
-            set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -pthread")
+            set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libc++ -pthread")
         endif()
     endif(NANA_CMAKE_SHARED_LIB)
 
@@ -175,7 +175,7 @@ endif()
 
 
 if (APPLE AND "${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")                    # APPLE Clang
-  list(APPEND NANA_LINKS -stdlib=libstdc++)
+  list(APPEND NANA_LINKS -stdlib=libc++)
 endif ()
 
 

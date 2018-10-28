@@ -25,7 +25,7 @@
 // http://www.boost.org/doc/libs/1_58_0/libs/filesystem/doc/index.htm     ---
 // http://www.boost.org/doc/libs/1_34_0/libs/filesystem/doc/index.htm
 // http://www.boost.org/doc/libs/1_58_0/boost/filesystem.hpp
-// https://gcc.gnu.org/onlinedocs/libstdc++/manual/status.html#status.iso.200x --- Table 1.4. g++ C++ Technical Specifications Implementation Status
+// https://gcc.gnu.org/onlinedocs/libc++/manual/status.html#status.iso.200x --- Table 1.4. g++ C++ Technical Specifications Implementation Status
 
 #ifndef NANA_FILESYSTEM_HPP
 #define NANA_FILESYSTEM_HPP
@@ -57,7 +57,7 @@
 #   include <boost/filesystem.hpp>
 // dont include generic_u8string
 // http://www.boost.org/doc/libs/1_66_0/boost/filesystem/path.hpp
-// enable directory_iterator C++11 range-base for 
+// enable directory_iterator C++11 range-base for
 // http://www.boost.org/doc/libs/1_66_0/boost/filesystem/operations.hpp
 // but travis come with an oooold version of boost
 // NOT enable directory_iterator C++11 range-base for
@@ -83,7 +83,7 @@ namespace boost
 		}
 
 	}  // namespace filesystem
-}   
+}
 
 
 // add boost::filesystem into std::experimental::filesystem

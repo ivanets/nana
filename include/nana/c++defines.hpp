@@ -29,7 +29,7 @@
  *
  *	Workaround to known compiler errors, unnecessary warnings or lack of C++11/14/17 support:
  *	- _SCL_SECURE_NO_WARNNGS, _CRT_SECURE_NO_DEPRECATE (VC)
- *	- STD_CODECVT_NOT_SUPPORTED (VC RC, <codecvt> is a known issue on libstdc++, it works on libc++)
+ *	- STD_CODECVT_NOT_SUPPORTED (VC RC, <codecvt> is a known issue on libc++, it works on libc++)
  *	- STD_THREAD_NOT_SUPPORTED (GCC < 4.8.1)
  *	- STD_NUMERIC_CONVERSIONS_NOT_SUPPORTED  (MinGW with GCC < 4.8.1)
  *	- STD_NUMERIC_CONVERSIONS_NOT_SUPPORTED (MinGW with GCC < 4.8.1)
@@ -127,17 +127,17 @@
 
 	#include <iosfwd>	//Introduces some implement-specific flags of ISO C++ Library
 	#if defined(__GLIBCPP__) || defined(__GLIBCXX__)
-		//<codecvt> is a known issue on libstdc++, it works on libc++
+		//<codecvt> is a known issue on libc++, it works on libc++
 		#define STD_CODECVT_NOT_SUPPORTED
 	#endif
 #elif defined(__GNUC__) //GCC
 
 	#include <iosfwd>	//Introduces some implement-specific flags of ISO C++ Library
 	#if defined(__GLIBCPP__) || defined(__GLIBCXX__)
-		//<codecvt> is a known issue on libstdc++, it works on libc++
+		//<codecvt> is a known issue on libc++, it works on libc++
 		#define STD_CODECVT_NOT_SUPPORTED
 
-		//It's a known issue of libstdc++ on MinGW
+		//It's a known issue of libc++ on MinGW
 		//introduce to_string/to_wstring workarounds for disabled capacity of stdlib
 		#ifdef _GLIBCXX_HAVE_BROKEN_VSWPRINTF
 			#if (__GNUC__ < 5)
@@ -252,7 +252,7 @@
 #  if __has_include(<filesystem>)
 #    undef STD_FILESYSTEM_NOT_SUPPORTED
 #  endif
-#  if __has_include(<mutex>) 
+#  if __has_include(<mutex>)
 #    if !(defined(NANA_MINGW) && !defined(_GLIBCXX_HAS_GTHREADS))
 //See the comment above regarding MinGW's threading support
 #      undef STD_THREAD_NOT_SUPPORTED
